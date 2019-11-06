@@ -12,5 +12,5 @@ export default function Routes() {
       <Route to="/add" component={Edit} />
       <Route to="/cart" component={Cart} />
     </Switch>
-  );``
+  );
 }

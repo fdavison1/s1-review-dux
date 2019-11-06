@@ -16,7 +16,7 @@ module.exports ={
         const db = req.app.get('db')
         const {name, price} = req.body
         const {id} = req.params
-        db.edit_item([name, +price , +id]).then(items=> res.status(200).send(items))
+        db.edit_item([name, +id, +price]).then(items=> res.status(200).send(items))
     },
     deleteItem(req,res){
         const db = req.app.get('db')

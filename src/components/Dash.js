@@ -1,6 +1,8 @@
 import React from "react";
 import Item from "./Item";
 import { Link } from "react-router-dom";
+import {connect} from 'react-redux'
+import {getItems} from '../dux/reducer'
 
 class Dash extends React.Component {
   constructor() {
@@ -31,17 +33,33 @@ class Dash extends React.Component {
       ]
     };
   }
+
+componentDidMount(){
+  this.props.getItems()
+}
+
   render() {
+    console.log(this.props)
     let { items } = this.state;
     return (
       <div>
         <Link to="/add"><button>Add Item</button></Link>
-        {items.map(item => (
-          <Item it={item} />
+        {this.props.items.map(item => (
+          <Item 
+          key={item.id}
+          it={item} />
         ))}
       </div>
     );
   }
 }
 
-export default Dash;
+function mapStateToProps(state){
+  return {
+    items: state.items, 
+    loading: state.loading, 
+    error: state.error
+  }
+}
+
+export default connect(mapStateToProps, {getItems})(Dash);
