@@ -8,7 +8,7 @@ import './Item.css'
             <div className='single-item-container'>
                 <h3>{name}</h3>
                 <p>${price}</p>
-                <img src={img} alt='picture of some product'/>
+                <img src={img} alt=''/>
                 <div className='button-container'>
                     <Link to='/cart' onClick={()=> console.log(props.it)}><button>Add To Cart</button></Link>
                     <Link to={`/edit/${id}`} onClick={()=> console.log(props.it)}><button>Edit</button></Link>
