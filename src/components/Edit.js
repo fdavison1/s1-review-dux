@@ -9,7 +9,12 @@ class Edit extends React.Component {
     }
     render(){
         return (
-            <div>hello Edit</div>
+            
+            <div>
+                {this.props.match && this.props.match.params.id? <div>true</div>:
+                <div>false</div>
+            }
+            </div>
         )
     }
 }

@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import Dash from "./src/components/Dash";
-import Edit from "./src/components/Edit";
-import Cart from "./src/components/Cart";
+import Dash from "./components/Dash";
+import Edit from "./components/Edit";
+import Cart from "./components/Cart";
 
 export default function Routes() {
   return (
@@ -12,5 +12,5 @@ export default function Routes() {
       <Route to="/add" component={Edit} />
       <Route to="/cart" component={Cart} />
     </Switch>
-  );
+  );``
 }
